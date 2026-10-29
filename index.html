@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d0c">
+  <title>Kennyy's World — Official Music</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">K</span><span>KENNYY'S WORLD</span></a>
+      <nav>
+        <a class="nav-item active" href="#home">⌂ <span>Home</span></a>
+        <a class="nav-item" href="#tracks">♫ <span>My Music</span></a>
+        <a class="nav-item" href="#comments">▤ <span>Guestbook</span></a>
+      </nav>
+      <div class="side-note"><span class="live-dot"></span> Independent artist<br><small>Real sounds. Your support.</small></div>
+      <a class="admin-link" href="admin.html">Owner login ↗</a>
+    </aside>
+
+    <main id="home" class="main-content">
+      <section class="hero">
+        <div class="hero-art"><div class="hero-letter">K</div></div>
+        <div class="hero-copy">
+          <span class="eyebrow">OFFICIAL ARTIST PAGE</span>
+          <h1>Kennyy's World</h1>
+          <p>My music world · Original music</p>
+          <p class="hero-tagline">Headphones on. World off.</p>
+          <div class="hero-actions">
+            <button id="play-all" class="btn btn-green">▶ Play music</button>
+            <a class="btn btn-outline" href="#tracks">Explore tracks</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tracks" class="section">
+        <div class="section-heading">
+          <div><span class="eyebrow">THE COLLECTION</span><h2>My Music</h2></div>
+          <span id="track-count" class="muted">Loading tracks…</span>
+        </div>
+        <div class="language-filter-wrap">
+          <label for="language-filter">Browse by language</label>
+          <select id="language-filter" aria-label="Filter songs by language">
+            <option value="all">All languages</option><option value="English">English</option><option value="Hindi">Hindi</option><option value="Bengali">Bengali</option><option value="Punjabi">Punjabi</option><option value="Tamil">Tamil</option><option value="Telugu">Telugu</option><option value="Other">Other</option>
+          </select>
+        </div>
+        <div id="track-list" class="track-list">
+          <div class="empty-state"><span class="pulse">♫</span><h3>Your songs will live here</h3><p>Once you connect Supabase and upload your tracks from the owner page, they will appear here.</p></div>
+        </div>
+      </section>
+
+      <section id="lyrics-section" class="section lyrics-panel">
+        <div class="section-heading">
+          <div><span class="eyebrow">SING ALONG</span><h2 id="lyrics-song-title">Song Lyrics</h2></div>
+          <span id="lyrics-language" class="muted">Choose a track</span>
+        </div>
+        <div class="lyrics-sync-wrap">
+          <p class="lyrics-label">NOW SINGING</p>
+          <div id="synced-lyrics" class="synced-lyrics" aria-live="polite">Choose a song to see synchronized lyrics, if available.</div>
+        </div>
+        <details class="full-lyrics-details" id="full-lyrics-details">
+          <summary>Read full lyrics</summary>
+          <pre id="full-lyrics" class="full-lyrics">Full lyrics will appear here when available.</pre>
+        </details>
+      </section>
+
+      <section id="comments" class="section guestbook">
+        <div class="section-heading">
+          <div><span class="eyebrow">SAY SOMETHING</span><h2>Guestbook</h2></div>
+          <span class="muted">No account needed</span>
+        </div>
+        <p class="section-intro">Enjoyed a track? Leave Kennyy's World a message. Use a nickname — no signup required.</p>
+        <form id="comment-form" class="comment-form">
+          <label class="sr-only" for="guest-name">Your nickname</label>
+          <input id="guest-name" maxlength="32" placeholder="Your nickname" required>
+          <label class="sr-only" for="guest-comment">Your comment</label>
+          <textarea id="guest-comment" maxlength="500" rows="3" placeholder="Write a comment…" required></textarea>
+          <button class="btn btn-green" type="submit">Post comment</button>
+        </form>
+        <p id="comment-status" class="status" aria-live="polite"></p>
+        <div id="comment-list" class="comment-list"><p class="muted">Connect your database to show guest comments here.</p></div>
+      </section>
+      <footer><span>© <span id="year"></span> Kennyy's World</span><span>Made for the love of music ♡</span></footer>
+    </main>
+  </div>
+
+  <div class="player-bar">
+    <div class="now-playing"><div class="mini-cover">K</div><div><strong id="now-title">Choose a track</strong><small id="now-artist">Kennyy's World</small></div></div>
+    <div class="player-controls"><button id="prev-track" aria-label="Previous track">|◀</button><button id="toggle-play" class="play-circle" aria-label="Play or pause">▶</button><button id="next-track" aria-label="Next track">▶|</button><div class="progress-wrap"><span id="current-time">0:00</span><input id="seek" type="range" min="0" max="100" value="0" aria-label="Seek"><span id="duration">0:00</span></div></div>
+    <div class="volume-wrap">♫ <input id="volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></div>
+    <audio id="audio" preload="metadata"></audio>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
