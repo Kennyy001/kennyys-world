@@ -8,3 +8,19 @@
 
 /* Lyrics display */
 .lyrics-panel{padding:24px;border-radius:18px;border:1px solid #202c25;background:linear-gradient(145deg,#101914,#0b100e)}.lyrics-sync-wrap{border:1px solid #203a2a;border-radius:16px;padding:22px;text-align:center;background:radial-gradient(ellipse at center,#153522 0%,#0a100c 75%);min-height:110px;display:flex;flex-direction:column;justify-content:center;gap:10px}.lyrics-label{font-size:10px;letter-spacing:2px;color:#86c99c;margin:0}.synced-lyrics{font:600 clamp(20px,3vw,30px) 'Space Grotesk',sans-serif;line-height:1.45;color:#effff3;white-space:pre-wrap;overflow-wrap:anywhere}.synced-lyrics.has-timed-lyrics{color:#baffcb;text-shadow:0 0 22px #1ed76025}.full-lyrics-details{margin-top:14px;border:1px solid #24352a;border-radius:12px;padding:15px 17px;background:#ffffff03}.full-lyrics-details summary{cursor:pointer;color:#bff4ce;font-weight:700}.full-lyrics{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.9 inherit;color:#d5e2d8;margin:14px 0 0}.admin-card textarea{width:100%;background:#0b100e;color:var(--text);border:1px solid #2a3930;border-radius:11px;padding:13px 14px;resize:vertical;line-height:1.5}.admin-card textarea:focus{border-color:#3aa963;outline:none}
+
+/* Custom logo in the main hero section */
+.hero-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-custom-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
