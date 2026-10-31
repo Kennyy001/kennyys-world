@@ -54,3 +54,26 @@ footer{display:flex;justify-content:space-between;gap:12px;padding:30px 4px 20px
     width: 100%;
   }
 }
+/* Add this block to the very bottom of styles.css for the track editor UI */
+.admin-track-info{display:flex;align-items:center;gap:13px;min-width:0}
+.admin-track-cover{width:48px;height:48px;object-fit:cover;border-radius:9px;border:1px solid #304438;flex:none}
+.admin-track-cover-empty{display:grid;place-items:center;background:#14251a;color:#1ed760;font-size:22px}
+.admin-track-text{display:grid;gap:5px;min-width:0}
+.admin-track-text strong{overflow-wrap:anywhere}
+.admin-track-text small{color:#9eafa4;font-size:12px}
+.admin-track-actions{display:flex;gap:8px;flex:none}
+.admin-track-actions button{border-radius:9px;padding:8px 13px;font-weight:700;cursor:pointer}
+.admin-edit-btn{border:1px solid #28643d;background:#12291a;color:#7df2a5}
+.admin-edit-btn:hover{background:#1a3b25}
+.admin-editor{margin:-3px 0 12px;padding:18px;border:1px solid #294332;border-radius:14px;background:#0a120d}
+.admin-edit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.admin-edit-grid label{display:grid;gap:7px;color:#dce7df;font-size:13px;font-weight:700}
+.admin-edit-grid input,.admin-edit-grid select{width:100%;min-width:0;padding:11px 12px;border:1px solid #304438;border-radius:9px;background:#101b14;color:#f4f7f5}
+.admin-edit-grid input[type=file]{font-size:12px}
+.admin-edit-current-cover{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-top:15px;color:#9eafa4;font-size:12px}
+.admin-edit-current-cover img{width:66px;height:66px;object-fit:cover;border-radius:10px;border:1px solid #304438}
+.admin-remove-cover{display:flex;align-items:center;gap:7px}
+.admin-edit-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.admin-edit-status{color:#8fe5a8;font-size:12px}
+.admin-edit-actions button:disabled{opacity:.55;cursor:wait}
+@media(max-width:600px){.admin-edit-grid{grid-template-columns:1fr}.admin-track-actions{gap:5px}.admin-track-actions button{padding:7px 9px;font-size:12px}.admin-track-cover{width:42px;height:42px}}
